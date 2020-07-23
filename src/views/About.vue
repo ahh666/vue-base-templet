@@ -4,7 +4,9 @@
     <BaseButton />
     <BaseSwitch v-model="isActive" />
     <BaseMask :show-mask.sync="isActive">
-      <p style="color: #fff">这里可以加一些东西</p>
+      <p style="color: #fff;">
+        这里可以加一些东西
+      </p>
     </BaseMask>
     <DynamicComponent />
   </div>
@@ -16,8 +18,8 @@ export default {
   components: { DynamicComponent },
   data() {
     return {
-      isActive: false,
+      isActive: false
     }
-  },
+  }
 }
 </script>
