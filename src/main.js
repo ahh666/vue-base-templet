@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import './components/base'
 
+if(process.env.NODE_ENV !== 'production') {
+  eruda.init()
+}
 
 Vue.config.productionTip = false
 
