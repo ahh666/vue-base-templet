@@ -45,5 +45,7 @@ module.exports = {
       registeredComponentsOnly: false,
       ignores: [],
     }],
+    // 允许标识符以下划线开头
+    'no-underscore-dangle': 0,
   },
 }

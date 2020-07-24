@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './components/base'
+import './api'
 
 if (process.env.NODE_ENV !== 'production') {
   window.eruda.init()
