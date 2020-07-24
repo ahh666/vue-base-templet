@@ -3,6 +3,9 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   publicPath: !isProd ? '/' : '',
   productionSourceMap: false,
+  devServer: {
+    port: 8090,
+  },
   configureWebpack: (config) => {
     if (isProd) {
       // 生产环境去掉 console.log

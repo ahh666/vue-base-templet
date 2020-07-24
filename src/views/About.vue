@@ -14,12 +14,13 @@
 
 <script>
 import DynamicComponent from './dynamic-component'
+
 export default {
   components: { DynamicComponent },
   data() {
     return {
-      isActive: false
+      isActive: false,
     }
-  }
+  },
 }
 </script>
