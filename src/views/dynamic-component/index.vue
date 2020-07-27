@@ -3,13 +3,13 @@
     <button v-for="type in types" :key="type" @click="currentType = type">
       {{ type }}
     </button>
-    <component :is="currentComponent"></component>
+    <Component :is="currentComponent"/>
   </div>
 </template>
 
 <script>
 const context = require.context('./', false, /\.vue$/)
-let components = {}
+const components = {}
 context.keys().forEach((key) => {
   if (key.includes('index')) return
   const component = context(key).default
@@ -43,7 +43,8 @@ export default {
   },
   created() {
     this.types = Object.keys(this.typeComponents)
-    this.currentType = this.types[0] // 默认第一个选项
+    const firstType = this.types[0]
+    this.currentType = firstType // 默认第一个选项
   },
 }
 </script>
