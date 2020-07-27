@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './components/base'
-import './api'
+import Api from './api'
+
+Vue.prototype.$api = Api
 
 if (process.env.NODE_ENV !== 'production') {
   window.eruda.init()

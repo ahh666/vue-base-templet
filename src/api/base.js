@@ -15,8 +15,17 @@ export default class BaseApi {
     return res
   }
 
-  get(url, config) {
-    return this.handler.get(url, config).then(this._transfromResponse)
+  get(url, config = {}) {
+    // 防止 get请求缓存
+    const now = `${Date.now()}`
+    let _url = url
+    if (config.params) {
+      config.params[now] = now
+    } else {
+      const hasParams = url.includes('?')
+      _url = `${url + (hasParams ? '&' : '?')}${now}=${now}`
+    }
+    return this.handler.get(_url, config).then(this._transfromResponse)
   }
 
   post(url, data, config) {
