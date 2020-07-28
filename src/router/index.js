@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+// 为了首屏加载速度，首屏不需要按需加载
+import Home from '../views/home'
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,13 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  // 页面滚动行为
+  scrollBehavior(/* to, from, savedPosition */) {
+    return {
+      x: 0,
+      y: 0,
+    }
+  },
 })
 
 export default router
