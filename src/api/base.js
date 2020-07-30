@@ -7,7 +7,7 @@ export default class BaseApi {
     this.handler.defaults.baseURL = apiConfig.baseUrl
   }
 
-  static _transfromResponse(res) {
+  _transfromResponse(res) {
     const { data, status } = res
     if (status === 200) {
       return data

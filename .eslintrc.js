@@ -1,19 +1,22 @@
+/*
+ * @Description: Description
+ * @Author: 艾欢欢
+ * @Date: 2020-07-24 11:17:07
+ * @LastEditTime: 2020-07-30 17:10:20
+ * @LastEditors: 艾欢欢
+ * @FilePath: \vue-base-templet\.eslintrc.js
+ */
 module.exports = {
   env: {
     browser: true,
     es2020: true,
   },
-  extends: [
-    'plugin:vue/essential',
-    'airbnb-base',
-  ],
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module',
   },
-  plugins: [
-    'vue',
-  ],
+  plugins: ['vue'],
   rules: {
     // 生产环境不允许debugger
     'no-debugger': process.env.NODE_ENV === 'development' ? 'off' : 'error',
@@ -41,11 +44,17 @@ module.exports = {
       },
     ],
     // 组件在template内必须使用 PascalCase 格式
-    'vue/component-name-in-template-casing': ['error', 'PascalCase', {
-      registeredComponentsOnly: false,
-      ignores: [],
-    }],
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      {
+        registeredComponentsOnly: false,
+        ignores: [],
+      },
+    ],
     // 允许标识符以下划线开头
     'no-underscore-dangle': 0,
+    // 允许在class方法中使用this
+    'class-methods-use-this': 0,
   },
 }
