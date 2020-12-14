@@ -24,5 +24,8 @@ export default {
       isActive: false,
     }
   },
+  created() {
+    console.log('I am Archer')
+  },
 }
 </script>

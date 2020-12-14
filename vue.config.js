@@ -2,16 +2,12 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-23 16:30:18
- * @LastEditTime: 2020-12-14 15:55:45
+ * @LastEditTime: 2020-12-14 17:06:29
  * @LastEditors: 艾欢欢
  * @FilePath: \vue-base-templet\vue.config.js
  */
-const path = require('path')
-
 const isProd = process.env.NODE_ENV === 'production'
-function resolve(dir) {
-  return path.join(__dirname, dir)
-}
+const webpackConfig = require('./config/webpack.config.js')
 
 module.exports = {
   publicPath: !isProd ? '/' : '',
@@ -42,45 +38,8 @@ module.exports = {
         args[0].title = '不才的小站'
         return args // 传递给 html-webpack-plugin's 构造函数的新参数
       })
-      .end()
+    webpackConfig(config)
 
-    // 设置路径别名
-    config.resolve.alias
-    // .set('@', resolve('src'))
-      .set('@assets', resolve('src/assets'))
-    // .set('@components', resolve('src/components'))
-    // .set('@plugins', resolve('src/plugins'))
-    // .set('@views', resolve('src/views'))
-    // .set('@store', resolve('src/store'))
-
-    if (isProd) {
-      // gzip压缩
-      config
-        .plugin('gzip-plugin')
-        .use('compression-webpack-plugin', [
-          {
-            filename: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.html$|\.json$|\.css$|\.ttf$/,
-            threshold: 4096, // 只有大小大于该值（4KB）的资源会被处理
-            minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
-            deleteOriginalAssets: true, // 删除原文件
-          },
-        ])
-        .end()
-
-      config.module
-        .rule('images')
-        .use('image-webpack-loader')
-        .loader('image-webpack-loader')
-        .options({
-          mozjpeg: { progressive: true, quality: 65 },
-          optipng: { enabled: false },
-          pngquant: { quality: [0.65, 0.9], speed: 4 },
-          // gifsicle: { interlaced: false },
-          // webp: { quality: 75 }
-        })
-    }
     // --------- 分割：以下适用移动端 H5 ---------
     // 移动端调试工具
     if (!isProd) {
@@ -92,7 +51,6 @@ module.exports = {
             before: true,
           },
         ])
-        .end()
     }
   },
 }
