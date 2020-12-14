@@ -1,3 +1,11 @@
+/*
+ * @Description: Description
+ * @Author: 艾欢欢
+ * @Date: 2020-07-23 16:30:18
+ * @LastEditTime: 2020-12-14 15:55:45
+ * @LastEditors: 艾欢欢
+ * @FilePath: \vue-base-templet\vue.config.js
+ */
 const path = require('path')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -25,12 +33,6 @@ module.exports = {
         },
       },
     },
-  },
-  configureWebpack: (config) => {
-    if (isProd) {
-      // 生产环境去掉 console.log
-      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
-    }
   },
   chainWebpack: (config) => {
     // 设置页面title
