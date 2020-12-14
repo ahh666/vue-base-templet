@@ -56,5 +56,9 @@ module.exports = {
     'no-underscore-dangle': 0,
     // 允许在class方法中使用this
     'class-methods-use-this': 0,
+    // 代码中可出现console
+    'no-console': 'off',
+    // 接口字段可以不使用 驼峰命名法
+    camelcase: ['error', { allow: ['^error_'] }],
   },
 }
