@@ -7,6 +7,7 @@
         这里可以加一些东西
       </p>
     </BaseMask>
+    <BaseLoading />
     <DynamicComponent />
   </div>
 </template>
