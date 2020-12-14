@@ -1,10 +1,15 @@
 import axios from 'axios'
-import apiConfig from './config'
+import baseUrl from './config'
 
 export default class BaseApi {
   constructor() {
-    this.handler = axios.create()
-    this.handler.defaults.baseURL = apiConfig.baseUrl
+    this.handler = axios.create({
+      baseURL: baseUrl,
+      // timeout: 2000, // 超时
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    })
   }
 
   _transfromResponse(res) {

@@ -8,5 +8,8 @@ const config = {
     baseUrl: 'https://prod.cn',
   },
 }
+const PATH = '/'
 
-export default config[env]
+const baseUrl = config[env] + PATH
+
+export default baseUrl
