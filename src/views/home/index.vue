@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img src="@assets/img/1000046.jpg" width="300px" />
     <BaseButton />
     <BaseSwitch v-model="isActive" />
     <BaseMask :show-mask.sync="isActive">

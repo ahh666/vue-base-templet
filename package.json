@@ -30,6 +30,7 @@
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-vue": "^6.2.2",
     "html-webpack-link-plugin": "^1.0.3",
+    "image-webpack-loader": "^7.0.1",
     "postcss-px-to-viewport": "^1.1.1",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.2",
