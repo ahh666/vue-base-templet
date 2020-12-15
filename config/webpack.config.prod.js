@@ -2,7 +2,7 @@
  * @Description: 生产打包配置
  * @Author: 艾欢欢
  * @Date: 2020-12-14 16:28:41
- * @LastEditTime: 2020-12-14 17:02:39
+ * @LastEditTime: 2020-12-15 09:41:43
  * @LastEditors: 艾欢欢
  * @FilePath: \vue-base-templet\config\webpack.config.prod.js
  */
@@ -37,7 +37,7 @@ module.exports = (config) => {
         test: /\.js$|\.html$|\.json$|\.css$|\.ttf$/,
         threshold: 4096, // 只有大小大于该值（4KB）的资源会被处理
         minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
-        deleteOriginalAssets: true, // 删除原文件
+        deleteOriginalAssets: false, // 删除原文件
       },
     ])
 
@@ -51,6 +51,6 @@ module.exports = (config) => {
       optipng: { enabled: false },
       pngquant: { quality: [0.65, 0.9], speed: 4 },
       // gifsicle: { interlaced: false },
-    // webp: { quality: 75 }
+      // webp: { quality: 75 }
     })
 }
