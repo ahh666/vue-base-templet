@@ -39,18 +39,5 @@ module.exports = {
         return args // 传递给 html-webpack-plugin's 构造函数的新参数
       })
     webpackConfig(config)
-
-    // --------- 分割：以下适用移动端 H5 ---------
-    // 移动端调试工具
-    if (!isProd) {
-      config
-        .plugin('html-link')
-        .use(require('html-webpack-link-plugin'), [
-          {
-            js: ['https://cdn.jsdelivr.net/npm/eruda'],
-            before: true,
-          },
-        ])
-    }
   },
 }

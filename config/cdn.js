@@ -16,7 +16,7 @@ module.exports = {
       exportName: 'Vue',
     },
     vuex: {
-      url: 'https://cdn.bootcdn.net/ajax/libs/vuex/3.2.0/vuex.js',
+      url: 'https://cdn.bootcdn.net/ajax/libs/vuex/3.4.0/vuex.js',
       exportName: 'Vuex',
     },
     'vue-router': {
