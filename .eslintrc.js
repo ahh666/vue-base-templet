@@ -2,36 +2,149 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-24 11:17:07
- * @LastEditTime: 2020-07-30 17:10:20
+ * @LastEditTime: 2020-12-25 16:36:08
  * @LastEditors: 艾欢欢
  * @FilePath: \vue-base-templet\.eslintrc.js
  */
 module.exports = {
-  env: {
-    browser: true,
-    es2020: true,
+  root: true,
+
+  globals: {
+    process: true
   },
-  extends: ['plugin:vue/essential', 'airbnb-base'],
+  
   parserOptions: {
+    parser: 'babel-eslint',
     ecmaVersion: 11,
     sourceType: 'module',
+    ecmaFeatures: {
+      // 支持装饰器
+      legacyDecorators: true,
+      jsx: true
+    }
   },
-  plugins: ['vue'],
+
+  env: {
+    browser: true,
+    node: true,
+    es2020: true
+  },
+
+  extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  plugins: ['babel', 'prettier'],
+
   rules: {
-    // 生产环境不允许debugger
+    'prettier/prettier': [
+      'error',
+      {
+        eslintIntegration: true,
+        arrowParens: 'avoid',
+        bracketSpacing: true,
+        htmlWhitespaceSensitivity: 'ignore',
+        insertPragma: false,
+        jsxBracketSameLine: false,
+        jsxSingleQuote: false,
+        printWidth: 120,
+        proseWrap: 'preserve',
+        quoteProps: 'as-needed',
+        requirePragma: false,
+        semi: false,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'none',
+        useTabs: false
+      }
+    ],
+    // 使用2个空格缩进
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        flatTernaryExpressions: true,
+        ignoredNodes: ['ConditionalExpression']
+      }
+    ],
+    // 是否能使用debugger,开发可以，线上不可以
     'no-debugger': process.env.NODE_ENV === 'development' ? 'off' : 'error',
-    // 忽略行结束格式 LF 和 CRLF
-    'linebreak-style': [0, 'error', 'windows'],
-    // 允许直接使用 require()
-    'global-require': 0,
-    // 函数入参直接使用
-    'no-param-reassign': ['error', { props: false }],
-    // 行尾不要分号
+    // switch必须提供 default
+    'default-case': 'error',
+    // 禁止扩展原生属性
+    'no-extend-native': 'error',
+    // 禁止一成不变的循环,防止代码出现死循环
+    'no-unmodified-loop-condition': 'error',
+    // 禁止在变量未声明之前使用
+    'no-use-before-define': 'error',
+    // 代码后不使用分号
     semi: ['error', 'never'],
-    // 允许import引入本地文件时不带后缀
-    'import/extensions': 0,
-    // 引入本地文件可以不用详细路径
-    'import/no-unresolved': 0,
+    // 注释 // 或 /* 之后必须有一个空格
+    'spaced-comment': ['error', 'always'],
+    // 禁止重复导入模块，对于同一模块内内容，应一次导入
+    'no-duplicate-imports': 'error',
+    // 必须使用let 或 const, 不能使用var
+    'no-var': 'error',
+    // js中应使用单引号替代双引号
+    quotes: ['error', 'single'],
+    // 要求大括号内必须有空格
+    'object-curly-spacing': ['error', 'always'],
+    // 数组前后不需要添加空格
+    'array-bracket-spacing': ['error', 'never'],
+    // 箭头函数前后必须要有空格
+    'arrow-spacing': [
+      'error',
+      {
+        before: true,
+        after: true
+      }
+    ],
+    // 代码中可出现console
+    'no-console': 'off',
+    // 正则中可以出现控制字符
+    'no-control-regex': 'off',
+    'no-unused-vars': [
+      'error',
+      {
+        ignoreRestSiblings: true,
+        // 可以声明未使用的h，方便jsx
+        argsIgnorePattern: 'h'
+      }
+    ],
+    // 行注释必须在行上面
+    // 'line-comment-position': ['error', { position: 'above' }],
+    // 一个函数最多能指定4个参数
+    'max-params': ['error', { max: 4 }],
+    // 构造函数必须首字母大写
+    // "new-cap":['error', {"newIsCap": true} ],
+    // vue 属性顺序
+    'vue/attributes-order': [
+      'error',
+      {
+        order: [
+          'DEFINITION',
+          'LIST_RENDERING',
+          'CONDITIONALS',
+          'RENDER_MODIFIERS',
+          'GLOBAL',
+          'UNIQUE',
+          'TWO_WAY_BINDING',
+          'OTHER_DIRECTIVES',
+          'OTHER_ATTR',
+          'EVENTS',
+          'CONTENT'
+        ]
+      }
+    ],
+    // 一行最多几个属性
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 5,
+        multiline: {
+          max: 1,
+          allowFirstLine: false
+        }
+      }
+    ],
     // 组件名称必须是大驼峰
     'vue/name-property-casing': ['error', 'PascalCase'],
     // vue Html元素单标签关闭方式
@@ -40,25 +153,27 @@ module.exports = {
       {
         html: { normal: 'never', void: 'always' },
         svg: 'always',
-        math: 'always',
-      },
+        math: 'always'
+      }
     ],
-    // 组件在template内必须使用 PascalCase 格式
+    // 组件在template内必须使用 kebab-case 格式
     'vue/component-name-in-template-casing': [
       'error',
-      'PascalCase',
+      'kebab-case',
       {
         registeredComponentsOnly: false,
-        ignores: [],
-      },
+        ignores: []
+      }
     ],
-    // 允许标识符以下划线开头
-    'no-underscore-dangle': 0,
-    // 允许在class方法中使用this
-    'class-methods-use-this': 0,
-    // 代码中可出现console
-    'no-console': 'off',
-    // 接口字段可以不使用 驼峰命名法
-    camelcase: ['error', { allow: ['^error_'] }],
-  },
+    // template 内必须使用 ===
+    'vue/eqeqeq': 'error',
+    // scss deep 写法必须时 ::v-deep , 需要在这一处将 :v-deep 添加为例外
+    // "selector-pseudo-element-no-unknown":["error","v-deep"],
+    // 允许使用v-html
+    'vue/no-v-html': 0,
+    // 禁用隐式的eval() 比如 setTimeout('alert();', 100)
+    'no-implied-eval': 'error',
+    'no-inner-declarations': 'off'
+  }
 }
+
