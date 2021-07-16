@@ -1,0 +1,17 @@
+$light: (
+  themeColor: #35404f,
+  themeBgColor: #fff,
+  headerBgGradientStart: #2b9aff,
+  headerBgGradientEnd: #2765d8,
+);
+$dark: (
+  themeColor: #fff,
+  themeBgColor: #35404f,
+  headerBgGradientStart: #2b9aff,
+  headerBgGradientEnd: #2765d8,
+);
+
+$theme: (
+  light: $light,
+  dark: $dark,
+);

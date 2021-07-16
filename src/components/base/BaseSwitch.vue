@@ -1,6 +1,8 @@
 <template>
-  <div :class="['base-switch', active && 'base-switch-active']" @click="handleClick">
-    <div class="base-switch-pie"></div>
+  <div class="base-switch-box">
+    <div :class="['base-switch', active && 'base-switch-active']" @click="handleClick">
+      <div class="base-switch-pie"></div>
+    </div>
   </div>
 </template>
 
@@ -33,6 +35,9 @@ $switchWidth: 60px;
 $switchHeight: 30px;
 $switchRadius: 15px;
 
+.base-switch-box {
+  display: inline-block;
+}
 .base-switch {
   width: $switchWidth;
   height: $switchHeight;

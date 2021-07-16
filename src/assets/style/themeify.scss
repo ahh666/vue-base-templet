@@ -1,0 +1,46 @@
+@import './theme.scss';
+@mixin themeify {
+  //$theme-name 主题样式类名， $theme-map样式
+  @each $theme-name, $theme-map in $theme {
+    //!global 把局部变量强升为全局变量
+    $theme-map: $theme-map !global;
+    //判断 body的data-theme的属性值  #{}是sass的插值表达式   & sass嵌套里的父容器标识
+    body[data-theme='#{$theme-name}'] & {
+      // @content是混合器插槽，像vue的slot
+      @content;
+    }
+  }
+}
+
+//声明一个根据Key获取颜色的function
+@function themed($key) {
+  @return map-get($theme-map, $key); //从相应主题中拿到相应key对应的值
+}
+
+// 设置背景颜色
+@mixin bgColor($color) {
+  @include themeify {
+    background: themed($color);
+  }
+}
+
+// 设置背景渐变
+@mixin bgGradient($deg, $startColor, $endColor) {
+  @include themeify {
+    background-image: linear-gradient($deg, themed($startColor) 0%, themed($endColor) 100%);
+  }
+}
+
+// 设置字体颜色
+@mixin fontColor($color) {
+  @include themeify {
+    color: themed($color);
+  }
+}
+
+// 设置边框颜色
+@mixin borderColor($color) {
+  @include themeify {
+    border-color: themed($color);
+  }
+}

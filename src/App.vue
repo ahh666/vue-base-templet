@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" class="nav">
       <RouterLink to="/">
         Home
       </RouterLink>
@@ -22,26 +22,27 @@ export default {
 
 <style lang="scss">
 body {
-  background: 'themeBgColor';
+  padding: 0;
+  margin: 0;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  @include fontColor('themeColor');
+  @include bgColor('themeBgColor');
+  min-height: 100vh;
+  padding: 50px;
 }
 
 #nav {
-  padding: 30px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-#nav a {
+.nav a {
   font-weight: bold;
-  color: #2c3e50;
+  @include fontColor('themeColor');
 }
 
 #nav a.router-link-exact-active {
-  color: 'themeColor';
+  color: $red;
 }
 </style>
