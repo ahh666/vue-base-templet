@@ -2,8 +2,8 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-12-14 16:28:26
- * @LastEditTime: 2020-12-14 16:29:45
- * @LastEditors: 艾欢欢
+ * @LastEditTime: 2021-07-16 19:45:59
+ * @LastEditors: 艾欢欢<ahh666@qq.com>
  * @FilePath: \vue-base-templet\config\cdn.js
  */
 
@@ -12,18 +12,18 @@ module.exports = {
   enable: true,
   JS: {
     vue: {
-      url: 'https://cdn.bootcss.com/vue/2.6.11/vue.min.js',
+      url: 'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js',
       exportName: 'Vue',
     },
     vuex: {
-      url: 'https://cdn.bootcdn.net/ajax/libs/vuex/3.4.0/vuex.js',
+      url: 'https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.min.js',
       exportName: 'Vuex',
     },
     'vue-router': {
-      url: 'https://cdn.bootcss.com/vue-router/3.2.0/vue-router.min.js',
+      url: 'https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.min.js',
       exportName: 'VueRouter',
     },
-    axios: 'https://cdn.bootcss.com/axios/0.19.2/axios.min.js',
+    axios: 'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
   },
   CSS: {},
 }
