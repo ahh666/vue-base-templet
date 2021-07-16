@@ -10,14 +10,14 @@ export default {
     // 名为value 的属性
     value: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   methods: {
     handleChange(e) {
       // 暴露一个input时间
       this.$emit('input', e.target.value)
-    },
-  },
+    }
+  }
 }
 </script>

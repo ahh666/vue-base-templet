@@ -21,11 +21,11 @@ export default {
   components: { DynamicComponent },
   data() {
     return {
-      isActive: false,
+      isActive: false
     }
   },
   created() {
     console.log('I am Archer')
-  },
+  }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="base-mask" v-if="showMask" @click.stop="handleClickMask">
+  <div v-if="showMask" class="base-mask" @click.stop="handleClickMask">
     <slot></slot>
   </div>
 </template>
@@ -10,14 +10,14 @@ export default {
   props: {
     showMask: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
     handleClickMask() {
       this.$emit('update:showMask', !this.showMask)
-    },
-  },
+    }
+  }
 }
 </script>
 

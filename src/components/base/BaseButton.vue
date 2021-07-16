@@ -4,10 +4,8 @@
 
 <script>
 export default {
-  name: 'BaseButton',
+  name: 'BaseButton'
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

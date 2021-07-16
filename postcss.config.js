@@ -16,7 +16,7 @@ module.exports = {
       // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
       minPixelValue: 1,
       // 允许在媒体查询中转换`px`
-      mediaQuery: false,
-    },
-  },
+      mediaQuery: false
+    }
+  }
 }

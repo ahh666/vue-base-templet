@@ -7,7 +7,7 @@ import Api from './api'
 import Utils from './utils'
 import * as filters from './filters'
 // 配置全局过滤器
-Object.keys(filters).forEach((key) => {
+Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
@@ -23,5 +23,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount('#app')

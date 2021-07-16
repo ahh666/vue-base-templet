@@ -3,7 +3,7 @@ import BaseApi from './base'
 const ERROR_CODE = {
   USER_TOKEN_NULL: 100000,
   NOT_LOGIN: 100001,
-  LOGIN_FAILURE: 100002,
+  LOGIN_FAILURE: 100002
 }
 class CustomUserApi extends BaseApi {
   async transfromResponse(res) {

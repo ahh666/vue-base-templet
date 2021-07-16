@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'BaseLoading',
+  name: 'BaseLoading'
 }
 </script>
 

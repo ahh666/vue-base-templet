@@ -1,4 +1,3 @@
-const utils = {
-}
+const utils = {}
 
 export default utils

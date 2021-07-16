@@ -2,8 +2,8 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-24 11:17:07
- * @LastEditTime: 2020-12-25 16:36:08
- * @LastEditors: 艾欢欢
+ * @LastEditTime: 2021-07-16 17:40:18
+ * @LastEditors: 艾欢欢<ahh666@qq.com>
  * @FilePath: \vue-base-templet\.eslintrc.js
  */
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
   globals: {
     process: true
   },
-  
+
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 11,
@@ -156,10 +156,10 @@ module.exports = {
         math: 'always'
       }
     ],
-    // 组件在template内必须使用 kebab-case 格式
+    // 组件在template内必须使用 kebab-case 格式 // PascalCase
     'vue/component-name-in-template-casing': [
       'error',
-      'kebab-case',
+      'PascalCase',
       {
         registeredComponentsOnly: false,
         ignores: []
@@ -176,4 +176,3 @@ module.exports = {
     'no-inner-declarations': 'off'
   }
 }
-

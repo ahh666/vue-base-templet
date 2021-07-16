@@ -1,14 +1,29 @@
 <template>
   <div id="app">
     <div id="nav">
-      <RouterLink to="/">Home</RouterLink> |
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/">
+        Home
+      </RouterLink>
+      |
+      <RouterLink to="/about">
+        About
+      </RouterLink>
     </div>
-    <RouterView/>
+    <RouterView />
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    window.document.body.setAttribute('data-theme', 'light')
+  }
+}
+</script>
 
-<style>
+<style lang="scss">
+body {
+  background: 'themeBgColor';
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +42,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: 'themeColor';
 }
 </style>

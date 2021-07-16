@@ -15,7 +15,7 @@ import Home from '../views/home'
 // 处理路由跳转会报错的问题: Error: Avoided redundant navigation to current location: xxx
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch((err) => err)
+  return originalPush.call(this, location).catch(err => err)
 }
 
 Vue.use(VueRouter)
@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: Home
   },
   {
     path: '/about',
@@ -32,8 +32,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
 ]
 
 const router = new VueRouter({
@@ -42,9 +42,9 @@ const router = new VueRouter({
   scrollBehavior(/* to, from, savedPosition */) {
     return {
       x: 0,
-      y: 0,
+      y: 0
     }
-  },
+  }
 })
 
 export default router
