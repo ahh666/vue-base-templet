@@ -2,8 +2,8 @@
  * @Description: 前端路由
  * @Author: 艾欢欢
  * @Date: 2020-07-23 16:30:18
- * @LastEditTime: 2020-08-06 16:18:12
- * @LastEditors: 艾欢欢
+ * @LastEditTime: 2021-07-16 19:50:59
+ * @LastEditors: 艾欢欢<ahh666@qq.com>
  * @FilePath: \vue-base-templet\src\router\index.js
  */
 import Vue from 'vue'
@@ -37,6 +37,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history', // 默认history
   routes,
   // 页面滚动行为
   scrollBehavior(/* to, from, savedPosition */) {
