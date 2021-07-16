@@ -1,6 +1,8 @@
 <template>
   <div class="base-button-box">
-    <button v-on="$listeners">{{ text }}</button>
+    <button v-on="$listeners">
+      {{ text }}
+    </button>
   </div>
 </template>
 
@@ -10,9 +12,9 @@ export default {
   props: {
     text: {
       type: String,
-      default: '确认'
-    }
-  }
+      default: '确认',
+    },
+  },
 }
 </script>
 

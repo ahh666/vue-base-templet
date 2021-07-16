@@ -12,21 +12,21 @@ export default {
   // 通过model属性自定义 属性名和事件名
   model: {
     event: 'change',
-    prop: 'active'
+    prop: 'active',
   },
   props: {
     // 虽然自定义了 active属性，仍然要在 props 选项里面声明
     active: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     handleClick() {
       // 暴露change事件
       this.$emit('change', !this.active)
-    }
-  }
+    },
+  },
 }
 </script>
 

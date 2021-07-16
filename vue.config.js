@@ -25,10 +25,10 @@ module.exports = {
         changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
         // ws: true, // 是否启用websockets
         pathRewrite: {
-          '^/api': '/'
-        }
-      }
-    }
+          '^/api': '/',
+        },
+      },
+    },
   },
   chainWebpack: config => {
     // 设置页面title
@@ -37,5 +37,5 @@ module.exports = {
       return args // 传递给 html-webpack-plugin's 构造函数的新参数
     })
     webpackConfig(config)
-  }
+  },
 }

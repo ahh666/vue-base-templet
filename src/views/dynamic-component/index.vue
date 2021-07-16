@@ -33,19 +33,19 @@ export default {
     return {
       typeComponents: components,
       types: {},
-      currentType: ''
+      currentType: '',
     }
   },
   computed: {
     currentComponent() {
       return this.typeComponents[this.currentType]
-    }
+    },
   },
   created() {
     this.types = Object.keys(this.typeComponents)
     const firstType = this.types[0]
     this.currentType = firstType // 默认第一个选项
-  }
+  },
 }
 </script>
 

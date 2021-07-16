@@ -2,7 +2,7 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-24 11:17:07
- * @LastEditTime: 2021-07-16 17:40:18
+ * @LastEditTime: 2021-07-16 18:42:47
  * @LastEditors: 艾欢欢<ahh666@qq.com>
  * @FilePath: \vue-base-templet\.eslintrc.js
  */
@@ -10,7 +10,7 @@ module.exports = {
   root: true,
 
   globals: {
-    process: true
+    process: true,
   },
 
   parserOptions: {
@@ -20,14 +20,14 @@ module.exports = {
     ecmaFeatures: {
       // 支持装饰器
       legacyDecorators: true,
-      jsx: true
-    }
+      jsx: true,
+    },
   },
 
   env: {
     browser: true,
     node: true,
-    es2020: true
+    es2020: true,
   },
 
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
@@ -51,9 +51,9 @@ module.exports = {
         semi: false,
         singleQuote: true,
         tabWidth: 2,
-        trailingComma: 'none',
-        useTabs: false
-      }
+        trailingComma: 'all',
+        useTabs: false,
+      },
     ],
     // 使用2个空格缩进
     indent: [
@@ -62,8 +62,8 @@ module.exports = {
       {
         SwitchCase: 1,
         flatTernaryExpressions: true,
-        ignoredNodes: ['ConditionalExpression']
-      }
+        ignoredNodes: ['ConditionalExpression'],
+      },
     ],
     // 是否能使用debugger,开发可以，线上不可以
     'no-debugger': process.env.NODE_ENV === 'development' ? 'off' : 'error',
@@ -94,8 +94,8 @@ module.exports = {
       'error',
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     // 代码中可出现console
     'no-console': 'off',
@@ -106,8 +106,8 @@ module.exports = {
       {
         ignoreRestSiblings: true,
         // 可以声明未使用的h，方便jsx
-        argsIgnorePattern: 'h'
-      }
+        argsIgnorePattern: 'h',
+      },
     ],
     // 行注释必须在行上面
     // 'line-comment-position': ['error', { position: 'above' }],
@@ -130,9 +130,9 @@ module.exports = {
           'OTHER_DIRECTIVES',
           'OTHER_ATTR',
           'EVENTS',
-          'CONTENT'
-        ]
-      }
+          'CONTENT',
+        ],
+      },
     ],
     // 一行最多几个属性
     'vue/max-attributes-per-line': [
@@ -141,9 +141,9 @@ module.exports = {
         singleline: 5,
         multiline: {
           max: 1,
-          allowFirstLine: false
-        }
-      }
+          allowFirstLine: false,
+        },
+      },
     ],
     // 组件名称必须是大驼峰
     'vue/name-property-casing': ['error', 'PascalCase'],
@@ -153,8 +153,8 @@ module.exports = {
       {
         html: { normal: 'never', void: 'always' },
         svg: 'always',
-        math: 'always'
-      }
+        math: 'always',
+      },
     ],
     // 组件在template内必须使用 kebab-case 格式 // PascalCase
     'vue/component-name-in-template-casing': [
@@ -162,8 +162,8 @@ module.exports = {
       'PascalCase',
       {
         registeredComponentsOnly: false,
-        ignores: []
-      }
+        ignores: [],
+      },
     ],
     // template 内必须使用 ===
     'vue/eqeqeq': 'error',
@@ -173,6 +173,6 @@ module.exports = {
     'vue/no-v-html': 0,
     // 禁用隐式的eval() 比如 setTimeout('alert();', 100)
     'no-implied-eval': 'error',
-    'no-inner-declarations': 'off'
-  }
+    'no-inner-declarations': 'off',
+  },
 }

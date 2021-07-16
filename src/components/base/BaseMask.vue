@@ -10,14 +10,14 @@ export default {
   props: {
     showMask: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     handleClickMask() {
       this.$emit('update:showMask', !this.showMask)
-    }
-  }
+    },
+  },
 }
 </script>
 

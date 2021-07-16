@@ -16,7 +16,7 @@
 export default {
   mounted() {
     window.document.body.setAttribute('data-theme', 'light')
-  }
+  },
 }
 </script>
 

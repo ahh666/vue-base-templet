@@ -7,8 +7,8 @@ export default class BaseApi {
       baseURL: baseUrl,
       // timeout: 2000, // 超时
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8'
-      }
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
     })
   }
 

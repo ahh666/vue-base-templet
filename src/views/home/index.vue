@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       isActive: false,
-      themeType: 'light'
+      themeType: 'light',
     }
   },
   created() {
@@ -49,7 +49,7 @@ export default {
     changeTheme(theme) {
       console.log(66)
       window.document.body.setAttribute('data-theme', theme)
-    }
-  }
+    },
+  },
 }
 </script>
