@@ -2,7 +2,7 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-24 11:17:07
- * @LastEditTime: 2021-07-23 13:58:54
+ * @LastEditTime: 2021-07-23 14:41:47
  * @LastEditors: 艾欢欢<ahh666@qq.com>
  * @FilePath: \vue-base-templet\.eslintrc.js
  */
@@ -15,7 +15,6 @@ module.exports = {
 
   parserOptions: {
     parser: 'babel-eslint',
-    ecmaVersion: 11,
     sourceType: 'module',
     ecmaFeatures: {
       // 支持装饰器
@@ -27,7 +26,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es2020: true,
+    es6: true,
   },
 
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
@@ -37,10 +36,10 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        eslintIntegration: true, // 让prettier使用eslint的代码格式进行校验
         arrowParens: 'avoid', //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
         bracketSpacing: true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
-        htmlWhitespaceSensitivity: 'ignore',
+        eslintIntegration: true, // 让prettier使用eslint的代码格式进行校验
+        htmlWhitespaceSensitivity: 'css', // 空格遵守CSS显示属性的默认值
         insertPragma: false,
         jsxBracketSameLine: false, // 在jsx中把'>' 是否单独放一行
         jsxSingleQuote: false, // 在jsx中使用单引号代替双引号
