@@ -13,7 +13,7 @@
     </div>
     <br />
     <BaseMask :show-mask.sync="isActive">
-      <p style="color: #fff;">
+      <p style="color: #fff">
         这里可以加一些东西
       </p>
     </BaseMask>
@@ -23,10 +23,7 @@
     </div>
     <br />
 
-    <div>
-      动态组件：
-      <DynamicComponent />
-    </div>
+    <div>动态组件：<DynamicComponent /></div>
   </div>
 </template>
 
@@ -47,7 +44,6 @@ export default {
   },
   methods: {
     changeTheme(theme) {
-      console.log(66)
       window.document.body.setAttribute('data-theme', theme)
     },
   },
