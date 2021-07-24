@@ -21,18 +21,12 @@
       Loading动画：
       <BaseLoading />
     </div>
-    <br />
-
-    <div>动态组件：<DynamicComponent /></div>
   </div>
 </template>
 
 <script>
-import DynamicComponent from '../dynamic-component'
-
 export default {
   name: 'Home',
-  components: { DynamicComponent },
   data() {
     return {
       isActive: false,
