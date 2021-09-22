@@ -2,9 +2,9 @@
  * @Description: Description
  * @Author: 艾欢欢
  * @Date: 2020-07-24 11:17:07
- * @LastEditTime: 2021-07-23 14:41:47
- * @LastEditors: 艾欢欢<ahh666@qq.com>
- * @FilePath: \vue-base-templet\.eslintrc.js
+ * @LastEditTime : 2021-09-22 15:51:48
+ * @LastEditors  : Archer<ahh666@qq.com>
+ * @FilePath     : \vue-base-templet\.eslintrc.js
  */
 module.exports = {
   root: true,
@@ -130,6 +130,46 @@ module.exports = {
           'OTHER_ATTR',
           'EVENTS',
           'CONTENT',
+        ],
+      },
+    ],
+    // vue 组件中属性声明的顺序
+    'vue/order-in-components': [
+      'error',
+      {
+        order: [
+          'name',
+          'key',
+          'parent',
+          'functional',
+          ['delimiters', 'comments'],
+          ['components', 'directives', 'filters'],
+          'extends',
+          'mixins',
+          ['provide', 'inject'],
+          'ROUTER_GUARDS',
+          'layout',
+          'middleware',
+          'validate',
+          'scrollToTop',
+          'transition',
+          'loading',
+          'inheritAttrs',
+          'model',
+          ['props', 'propsData'],
+          'emits',
+          'setup',
+          'asyncData',
+          'data',
+          'fetch',
+          'head',
+          'computed',
+          'watch',
+          'watchQuery',
+          'LIFECYCLE_HOOKS',
+          'methods',
+          ['template', 'render'],
+          'renderError',
         ],
       },
     ],
