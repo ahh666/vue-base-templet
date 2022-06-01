@@ -8,7 +8,9 @@
  */
 module.exports = {
   // 是否启用CDN
-  enableCDN: true,
+  enableCDN: false,
   // 打包是否同时构建zip压缩包
   buildToZip: true,
+  // 启用图片压缩
+  enableImageCompress: false,
 }
