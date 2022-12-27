@@ -13,4 +13,6 @@ module.exports = {
   buildToZip: true,
   // 启用图片压缩
   enableImageCompress: false,
+  // 代码分析报告
+  codeReport: true,
 }

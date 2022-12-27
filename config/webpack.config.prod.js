@@ -65,4 +65,7 @@ module.exports = config => {
       },
     ])
   }
+
+  controller.codeReport &&
+    config.plugin('webpack-bundle-analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
 }

@@ -38,6 +38,7 @@
     "sass-loader": "^9.0.2",
     "sass-resources-loader": "^2.2.3",
     "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.7.0",
     "zip-webpack-plugin": "^4.0.1"
   }
 }
